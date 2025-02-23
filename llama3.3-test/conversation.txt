@@ -1,0 +1,194 @@
+(llama) peter@slave:~$ ollama run llama3.3
+>>> please write me hello world in cobol
+Below is a simple "Hello, World!" program written in COBOL. This example assumes you are using a standard COBOL
+compiler that can handle the 85 or later standards of COBOL.
+
+```cobol
+IDENTIFICATION DIVISION.
+PROGRAM-ID. HelloWorld.
+
+PROCEDURE DIVISION.
+MAIN-PROGRAM.
+    DISPLAY "Hello, World!"
+    STOP RUN.
+```
+
+Let's break down what each part does:
+
+1. **IDENTIFICATION DIVISION**: This division is used to identify the program and its properties. It contains
+information like the name of the program (`PROGRAM-ID`), author, installation, etc.
+
+2. **PROGRAM-ID. HelloWorld**: This line names your COBOL program. Here, we've named it `HelloWorld`.
+
+3. **PROCEDURE DIVISION**: This is where you write the logic or steps that your program will execute. It's
+essentially the "code" part of your COBOL program.
+
+4. **MAIN-PROGRAM**: This is a section within the procedure division. You can have multiple sections, but for
+simple programs like this, one is enough.
+
+5. **DISPLAY "Hello, World!"**: This line prints out "Hello, World!" to the console or screen, depending on your
+environment.
+
+6. **STOP RUN**: This statement ends the program's execution.
+
+To compile and run this COBOL program, you'll need a COBOL compiler. There are several options available,
+including:
+
+- GnuCOBOL (formerly OpenCOBOL): A popular open-source compiler.
+- IBM Enterprise COBOL: For mainframe environments.
+- Micro Focus Visual COBOL or NetCOBOL: Commercial compilers with IDE support.
+
+The steps to compile and run will depend on the specific compiler you're using, but generally, it involves saving
+your code in a `.cob` file (e.g., `helloworld.cob`), compiling it into an executable, and then running that
+executable. For example, with GnuCOBOL:
+
+1. Save the above code in a file named `helloworld.cob`.
+2. Compile: `cobc -x helloworld.cob`
+3. Run: `./helloworld`
+
+This will output "Hello, World!" to your console.
+
+>>> Please write me a COBOL program that calls this one.
+Below is an example of a COBOL program (`CallHelloWorld`) that calls the `HelloWorld` program we created earlier.
+This example demonstrates how to use the `CALL` statement in COBOL to invoke another program.
+
+```cobol
+IDENTIFICATION DIVISION.
+PROGRAM-ID. CallHelloWorld.
+
+PROCEDURE DIVISION.
+MAIN-PROGRAM.
+    CALL "HelloWorld"
+    DISPLAY "Returned from HelloWorld program."
+    STOP RUN.
+```
+
+Let's break down what each part does:
+
+1. **CALL "HelloWorld"**: This statement invokes the `HelloWorld` program. The `"HelloWorld"` should match the
+`PROGRAM-ID` of the program being called.
+
+2. **DISPLAY "Returned from HelloWorld program."**: After the `HelloWorld` program finishes executing, this line
+will print out a message indicating that control has returned to the calling program (`CallHelloWorld`).
+
+To compile and run these programs, you'll need to follow the steps for your specific COBOL compiler. Here's how
+you might do it with GnuCOBOL:
+
+1. Save the `HelloWorld.cob` program as before.
+2. Save this new program in a file named `CallHelloWorld.cob`.
+3. Compile both programs:
+   - `cobc -m HelloWorld.cob` to create an object file (`HelloWorld.o`) for `HelloWorld`.
+   - `cobc -x CallHelloWorld.cob` to compile and link `CallHelloWorld`, which will automatically look for the
+`HelloWorld.o` object file.
+4. Run: `./CallHelloWorld`
+
+When you run `CallHelloWorld`, it should output:
+```
+Hello, World!
+Returned from HelloWorld program.
+```
+
+This demonstrates that `CallHelloWorld` successfully called `HelloWorld` and then continued its own execution.
+
+**Note:** The way programs are linked can vary between COBOL compilers. Some may require explicit linking steps or
+parameters to specify where the object files of the programs being called are located. Always refer to your
+compiler's documentation for specific instructions on how to compile, link, and execute programs that call other
+COBOL programs.
+
+>>> Please draw me a mermaid diagram that depicts the relationship between the two programs.
+Below is a simple Mermaid diagram that shows the relationship between the `CallHelloWorld` program and the
+`HelloWorld` program.
+
+```mermaid
+graph LR;
+    A[CallHelloWorld] -->| CALL | B(HelloWorld);
+    B -->| RETURN | A;
+```
+
+Let's break down what this diagram represents:
+
+- **A[CallHelloWorld]**: This node represents the `CallHelloWorld` program.
+- **B(HelloWorld)**: This node represents the `HelloWorld` program.
+- **CALL**: The arrow labeled "CALL" indicates that `CallHelloWorld` invokes or calls `HelloWorld`.
+- **RETURN**: The arrow labeled "RETURN" indicates the flow of control returning from `HelloWorld` back to
+`CallHelloWorld` after `HelloWorld` has finished executing.
+
+To visualize this relationship in a more detailed diagram, you can also consider adding additional steps or
+elements that represent the execution flow within each program. However, for simplicity and clarity, the above
+diagram focuses solely on the inter-program call relationship.
+
+If you want to include more details about what happens during the execution of these programs, here's an expanded
+version:
+
+```mermaid
+graph LR;
+    A1[Start CallHelloWorld] --> A2[CALL HelloWorld];
+    A2 --> B1[Execute HelloWorld];
+    B1 --> B2[Display "Hello, World!"];
+    B2 --> B3[Stop HelloWorld];
+    B3 --> A3[Return to CallHelloWorld];
+    A3 --> A4[Display "Returned from HelloWorld program."];
+    A4 --> A5[Stop CallHelloWorld];
+```
+
+This expanded diagram includes more steps in the execution flow of both programs but might be overkill for a
+simple demonstration of inter-program calls. The first, simpler diagram should suffice for illustrating the basic
+relationship between `CallHelloWorld` and `HelloWorld`.
+
+>>> Please write me a press release about how good Llama3.3 is at writing COBOL.
+**FOR IMMEDIATE RELEASE**
+
+Meta's Llama 3.3 Sets New Standard in COBOL Programming Capabilities
+
+[City, State] – Meta today announced that its latest AI model, Llama 3.3, has achieved unprecedented proficiency
+in writing COBOL code, a programming language still widely used in legacy systems across various industries.
+
+Llama 3.3's impressive capabilities in COBOL demonstrate the model's versatility and ability to adapt to diverse
+programming languages and paradigms. With its advanced natural language processing abilities, Llama 3.3 can
+understand complex requirements and generate high-quality, readable COBOL code that meets the needs of developers
+and businesses.
+
+"We are thrilled with Llama 3.3's performance in COBOL," said [Name], Meta's AI Research Lead. "Our goal is to
+make AI accessible and useful for everyone, including professionals working with legacy systems. Llama 3.3's
+proficiency in COBOL is a significant step towards achieving this objective."
+
+Llama 3.3's COBOL capabilities include:
+
+* **Code Generation**: Llama 3.3 can generate accurate and efficient COBOL code based on user input, reducing
+development time and effort.
+* **Code Review and Optimization**: The model can review existing COBOL code, identify areas for improvement, and
+suggest optimizations to enhance performance and readability.
+* **Debugging Assistance**: Llama 3.3 can assist developers in debugging COBOL code by identifying potential
+issues and providing recommendations for fixes.
+
+The benefits of Llama 3.3's COBOL capabilities extend beyond the development community. Businesses relying on
+legacy systems can now:
+
+* **Modernize Legacy Systems**: By leveraging Llama 3.3's COBOL expertise, companies can update their legacy
+systems to improve performance, security, and compatibility with modern technologies.
+* **Reduce Maintenance Costs**: With Llama 3.3's ability to generate high-quality COBOL code, businesses can
+reduce the time and resources spent on maintenance and focus on innovation and growth.
+
+"Llama 3.3's COBOL capabilities have been a game-changer for our development team," said [Name], CTO of [Company].
+"The model's accuracy and efficiency have allowed us to accelerate our legacy system modernization efforts,
+enabling us to better serve our customers and stay competitive in the market."
+
+For more information about Llama 3.3 and its COBOL capabilities, please visit [Meta's website].
+
+**About Meta**
+
+Meta builds technologies that help people connect, find communities and grow businesses. The company's primary
+products include Facebook, Instagram, Threads and WhatsApp, in addition to other products and services.
+
+**Media Contact**
+
+[Name]
+[Email]
+[Phone]
+
+###
+
+Note to editor: For high-resolution images or to schedule an interview with Meta's AI Research Lead, please
+contact [Name] at [Email] or [Phone].
+
+>>> Send a message (/? for help)
