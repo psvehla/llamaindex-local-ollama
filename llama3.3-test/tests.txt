@@ -1,0 +1,34 @@
+(llama) peter@slave:~/code/python/llamaindex-local-ollama/llama3.3-test$ cobc -x HelloWorld.cob
+HelloWorld.cob: 1: error: invalid indicator 'F' at column 7
+HelloWorld.cob: 2: error: invalid indicator 'M' at column 7
+HelloWorld.cob: 4: error: invalid indicator 'U' at column 7
+HelloWorld.cob: 5: error: invalid indicator 'R' at column 7
+HelloWorld.cob: 6: error: invalid indicator 'S' at column 7
+HelloWorld.cob: 7: warning: line not terminated by a newline
+HelloWorld.cob: 7: error: invalid indicator 'O' at column 7
+HelloWorld.cob: 8: error: PROGRAM-ID header missing
+(llama) peter@slave:~/code/python/llamaindex-local-ollama/llama3.3-test$ cobc -x -free HelloWorld.cob
+(llama) peter@slave:~/code/python/llamaindex-local-ollama/llama3.3-test$ ./HelloWorld
+Hello, World!
+(llama) peter@slave:~/code/python/llamaindex-local-ollama/llama3.3-test$
+(llama) peter@slave:~/code/python/llamaindex-local-ollama/llama3.3-test$ cobc -m HelloWorld.cob 
+HelloWorld.cob: 1: error: invalid indicator 'F' at column 7
+HelloWorld.cob: 2: error: invalid indicator 'M' at column 7
+HelloWorld.cob: 4: error: invalid indicator 'U' at column 7
+HelloWorld.cob: 5: error: invalid indicator 'R' at column 7
+HelloWorld.cob: 6: error: invalid indicator 'S' at column 7
+HelloWorld.cob: 7: error: invalid indicator 'O' at column 7
+HelloWorld.cob: 8: error: PROGRAM-ID header missing
+(llama) peter@slave:~/code/python/llamaindex-local-ollama/llama3.3-test$ cobc -m -free HelloWorld.cob 
+(llama) peter@slave:~/code/python/llamaindex-local-ollama/llama3.3-test$ cobc -x CallHelloWorld.cob 
+CallHelloWorld.cob: 1: error: invalid indicator 'F' at column 7
+CallHelloWorld.cob: 2: error: invalid indicator 'M' at column 7
+CallHelloWorld.cob: 4: error: invalid indicator 'U' at column 7
+CallHelloWorld.cob: 5: error: invalid indicator 'R' at column 7
+CallHelloWorld.cob: 6: error: invalid indicator 'L' at column 7
+CallHelloWorld.cob: 7: error: invalid indicator 'S' at column 7
+CallHelloWorld.cob: 8: error: invalid indicator 'O' at column 7
+CallHelloWorld.cob: 9: error: PROGRAM-ID header missing
+(llama) peter@slave:~/code/python/llamaindex-local-ollama/llama3.3-test$ cobc -x -free CallHelloWorld.cob 
+(llama) peter@slave:~/code/python/llamaindex-local-ollama/llama3.3-test$ ./CallHelloWorld 
+Hello, World!
