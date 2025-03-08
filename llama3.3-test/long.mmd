@@ -1,8 +1,8 @@
 graph LR;
     A1[Start CallHelloWorld] --> A2[CALL HelloWorld];
     A2 --> B1[Execute HelloWorld];
-    B1 --> B2[Display "Hello, World!"];
+    B1 --> B2[Display 'Hello, World!'];
     B2 --> B3[Stop HelloWorld];
     B3 --> A3[Return to CallHelloWorld];
-    A3 --> A4[Display "Returned from HelloWorld program."];
+    A3 --> A4[Display 'Returned from HelloWorld program.'];
     A4 --> A5[Stop CallHelloWorld];
